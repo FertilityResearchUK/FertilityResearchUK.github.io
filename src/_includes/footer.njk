@@ -5,6 +5,7 @@
         <div>
           <h4>Fertility Research UK</h4>
           <p>A UK-based charity dedicated to advancing fertility and reproductive health research, improving care, and strengthening the research community.</p>
+          <p class="mt-2" style="font-size:0.8rem; color:rgba(255,255,255,0.45);">Charity registration number: {{ site.charityNumber }}<br>{{ site.registeredAddress }}</p>
         </div>
         <div>
           <h4>Pages</h4>
@@ -12,18 +13,34 @@
             <li><a href="/">Home</a></li>
             <li><a href="/about/">About</a></li>
             <li><a href="/research/">Research</a></li>
-            <li><a href="/support/">Support</a></li>
+            <li><a href="/news/">News</a></li>
+            <li><a href="/fundraising/">Fundraising</a></li>
             <li><a href="/team/">Our Team</a></li>
           </ul>
         </div>
         <div>
           <h4>Get in touch</h4>
           <p>Have questions or want to collaborate?</p>
-          <a href="/support/#contact" class="btn btn-secondary btn-small mt-1">Contact us</a>
+          <a href="/fundraising/#contact" class="btn btn-secondary btn-small mt-1">Contact us</a>
+          <div class="footer-social mt-2">
+            <a href="{{ site.social.twitter }}" aria-label="Twitter / X" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            </a>
+            <a href="{{ site.social.linkedin }}" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="{{ site.social.facebook }}" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="{{ site.social.instagram }}" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; {{ site.year }} Fertility Research UK. All rights reserved.</p>
+        <p>&copy; {{ site.year }} Fertility Research UK.</p>
+        <p class="mt-1"><a href="/privacy/">Privacy policy</a> · <a href="/feed.xml">RSS Feed</a></p>
       </div>
     </div>
   </footer>

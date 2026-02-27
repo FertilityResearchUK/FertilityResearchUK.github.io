@@ -1,104 +1,136 @@
-# Fertility Research UK — Website v0
+# Fertility Research UK Website
 
-A static multi-page website for Fertility Research UK (FRUK), built with plain HTML, CSS and minimal JavaScript. Designed for quick review and easy deployment on GitHub Pages.
+Static website for Fertility Research UK (FRUK), built with [Eleventy](https://www.11ty.dev/) and content-first Markdown + Nunjucks templates.
 
-## Pages
+## Stack
 
-| Page | File | Description |
-|------|------|-------------|
-| Home | `index.html` | Hero, purpose, "did you know?" callouts, what we do |
-| About | `about.html` | Vision, mission, commitments, research responsibility |
-| Research | `research.html` | Research focus areas (accordion), researcher support |
-| Support | `support.html` | Patient info, donor section, contact form |
-| Our Team | `team.html` | Trustees, leadership, advisors, volunteers |
+- Eleventy 3
+- Markdown content in `src/*.md`
+- Nunjucks layouts/components in `src/_includes/`
+- Global data in `src/_data/`
+- Vanilla CSS and JavaScript (`src/styles.css`, `src/script.js`)
 
-## Repository layout
+## Prerequisites
 
-```
-/
-├── index.html
-├── about.html
-├── research.html
-├── support.html
-├── team.html
-├── styles.css
-├── script.js
-├── README.md
-├── content.txt          (source copy)
-├── prompt.txt           (tech spec)
-└── assets/
-    └── logo.svg         (placeholder wordmark)
-```
+- Node.js 18+
+- npm
 
-## Preview locally
-
-**Option A — just open the file:**
+## Install
 
 ```bash
-open index.html
+npm install
 ```
 
-**Option B — local server (recommended for accurate link behaviour):**
+## Local development
 
 ```bash
-cd /path/to/fruk.github.io
-python3 -m http.server 8000
+npm run serve
 ```
 
-Then visit [http://localhost:8000](http://localhost:8000).
+This starts Eleventy in watch mode with a local dev server.
 
-## Deploy on GitHub Pages
+## Production build
 
-1. Push this repo to GitHub (e.g. `fruk.github.io` or any repo name).
-2. Go to **Settings → Pages**.
-3. Under **Source**, select **Deploy from a branch**.
-4. Choose branch `main` and folder `/ (root)`.
-5. Click **Save**. The site will be live within a minute or two.
-
-## Customisation
-
-### Brand colours
-
-All colours are defined as CSS custom properties in `styles.css`:
-
-```css
-:root {
-  --primary:       #D4782F;   /* warm orange */
-  --accent:        #2A7F6F;   /* teal green */
-  --bg:            #FFF8F2;   /* warm off-white */
-  --text:          #1E1E1E;   /* charcoal */
-  --muted:         #6B6B6B;   /* warm grey */
-  --border:        #E0D8CF;   /* light warm grey */
-}
+```bash
+npm run build
 ```
 
-Change these values to update the entire palette.
+Generated output is written to `_site/`.
 
-### Contact form
+## Project structure
 
-The contact form on `support.html` submits to a [Formspree](https://formspree.io/) placeholder endpoint. Replace `https://formspree.io/f/xplaceholder` in `support.html` with your real Formspree form ID (or any other form backend).
-
-### People / team cards
-
-Edit `team.html` to replace placeholder names and bios. Cards show initials when no photo is provided. To add a photo, replace the initials text inside `.person-card__avatar` with an `<img>` tag:
-
-```html
-<div class="person-card__avatar">
-  <img src="assets/photos/name.jpg" alt="Jane Doe">
-</div>
+```text
+.
+├── .eleventy.js               # Eleventy config, filters, collections, SVG icon map
+├── src/
+│   ├── _data/
+│   │   └── site.js            # Global site metadata
+│   ├── _includes/
+│   │   ├── base.njk           # Base layout (SEO/meta, header/footer)
+│   │   ├── header.njk
+│   │   ├── footer.njk
+│   │   ├── home.njk
+│   │   ├── about.njk
+│   │   ├── research.njk
+│   │   ├── support.njk
+│   │   ├── fundraising.njk
+│   │   ├── team.njk
+│   │   └── news.njk
+│   ├── assets/                # Images and static assets (passthrough copied)
+│   ├── team/                  # Team/trustee profile entries
+│   ├── news/                  # News post entries
+│   ├── index.md
+│   ├── about.md
+│   ├── research.md
+│   ├── support.md
+│   ├── fundraising.md
+│   ├── team.md
+│   ├── news.md
+│   ├── privacy.md
+│   ├── 404.md
+│   ├── feed.njk
+│   ├── robots.njk
+│   ├── sitemap.njk
+│   ├── styles.css
+│   └── script.js
+├── _site/                     # Generated output (do not edit)
+└── _colour-options.html       # Palette exploration helper page
 ```
 
-## Tech stack
+## Content model
 
-- **HTML5** — semantic markup (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`)
-- **CSS3** — custom properties, Grid, Flexbox, mobile-first responsive
-- **Vanilla JS** — hamburger menu, form submission, active nav highlighting
-- **Google Fonts** — DM Sans (headings)
-- No frameworks, no build step
+### Standard pages
 
-## Non-goals (v0)
+Main pages are Markdown files in `src/` with front matter.
 
-- No donations / payment processing
-- No CMS or blog
-- No analytics
-- No multi-language support
+Example:
+
+```yaml
+---
+title: About
+description: Learn about FRUK
+layout: about.njk
+permalink: /about/
+---
+```
+
+### Team and trustees
+
+Team profiles live in `src/team/*.md` and are grouped by tags:
+
+- `tags: trustee`
+- `tags: team-member`
+
+Ordering is controlled by numeric `order` in front matter.
+
+### News
+
+News posts live in `src/news/*.md` with:
+
+- `headline`
+- `summary`
+- `date`
+- `image` (optional)
+- `tags: news`
+
+## Eleventy configuration notes
+
+`.eleventy.js` defines:
+
+- passthrough copy for `src/assets`, `src/styles.css`, `src/script.js`
+- custom collections for trustees, team members, and news
+- date, slug, initials, and icon filters
+- output directory `_site`
+
+## Deployment
+
+This repository is configured for static output deployment.
+
+1. Run `npm run build`
+2. Publish contents of `_site/` to your static host (for this repo, GitHub Pages)
+
+## Notes
+
+- `npm test` is currently a placeholder and intentionally exits with an error.
+- Update `src/_data/site.js` for site-wide metadata (URL, socials, organisation details).
+- Contact form endpoint is set in `src/_includes/support.njk`.
