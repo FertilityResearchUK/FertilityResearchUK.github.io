@@ -1,5 +1,6 @@
 ---
 name: Hira Husain
+linkedin: https://www.linkedin.com/in/hira-husain
 tags: team-member
 order: 1
 bio: >

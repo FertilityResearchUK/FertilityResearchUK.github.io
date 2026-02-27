@@ -1,6 +1,7 @@
 ---
 name: Joris Veltman
 photo: /assets/team/joris-veltman.jpg
+linkedin: https://www.linkedin.com/in/joris-veltman
 tags: team-member
 order: 4
 bio: >

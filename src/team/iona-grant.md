@@ -1,5 +1,6 @@
 ---
 name: Iona Grant
+linkedin: https://www.linkedin.com/in/iona-grant
 tags: team-member
 order: 2
 bio: >

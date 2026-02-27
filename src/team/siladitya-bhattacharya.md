@@ -1,5 +1,6 @@
 ---
-name: Siladitya (Bhatty) Bhattacharya
+name: Siladitya Bhattacharya
+linkedin: https://www.linkedin.com/in/siladitya-bhattacharya
 tags: trustee
 order: 2
 bio: >

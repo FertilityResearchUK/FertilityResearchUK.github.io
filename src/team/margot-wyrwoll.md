@@ -1,6 +1,7 @@
 ---
 name: Margot Wyrwoll
 photo: /assets/team/margot-wyrwoll.png
+linkedin: https://www.linkedin.com/in/margot-wyrwoll
 tags: team-member
 order: 5
 bio: >

@@ -1,6 +1,7 @@
 ---
 name: Anton Petrov
 photo: /assets/team/anton-petrov.png
+linkedin: https://www.linkedin.com/in/anton-petrov
 tags: team-member
 order: 7
 bio: >

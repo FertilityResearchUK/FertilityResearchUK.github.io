@@ -1,5 +1,6 @@
 ---
 name: Catriona Hepburn
+linkedin: https://www.linkedin.com/in/catriona-hepburn
 tags: team-member
 order: 6
 bio: >

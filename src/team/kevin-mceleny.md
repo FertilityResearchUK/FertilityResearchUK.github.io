@@ -1,5 +1,6 @@
 ---
 name: Kevin McEleny
+linkedin: https://www.linkedin.com/in/kevin-mceleny
 tags: trustee
 order: 3
 bio: >

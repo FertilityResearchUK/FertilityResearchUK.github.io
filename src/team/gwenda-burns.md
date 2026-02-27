@@ -1,6 +1,7 @@
 ---
 name: Gwenda Burns
 photo: /assets/team/gwenda-burns.jpg
+linkedin: https://www.linkedin.com/in/gwenda-burns
 tags: trustee
 order: 1
 bio: >
