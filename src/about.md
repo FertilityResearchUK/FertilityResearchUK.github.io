@@ -35,13 +35,13 @@ mission: >
 
 # ── Research Approach cards ──
 research_approach:
-  - icon: "📋"
+  - icon: "clipboard"
     title: Transparent funding
     description: How funding decisions are made and what projects we support and why.
-  - icon: "📊"
+  - icon: "bar-chart"
     title: Progress & outcomes
     description: Regular updates on supported projects and their outcomes and impact.
-  - icon: "❤️"
+  - icon: "heart"
     title: Lived experience informs priorities
     description: How patient and public voices shape our research agenda and strategic direction.
 

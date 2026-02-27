@@ -5,8 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if title == 'Home' %}Fertility Research UK — Advancing fertility research. Improving care.{% else %}{{ title }} — Fertility Research UK{% endif %}</title>
   <meta name="description" content="{{ description }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{% if title == 'Home' %}Fertility Research UK — Advancing fertility research. Improving care.{% else %}{{ title }} — Fertility Research UK{% endif %}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.ogImage }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if title == 'Home' %}Fertility Research UK — Advancing fertility research. Improving care.{% else %}{{ title }} — Fertility Research UK{% endif %}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.ogImage }}">
+
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.name }} — News Feed" href="/feed.xml">
   <link rel="stylesheet" href="/styles.css">
-  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NonprofitOrganization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.url }}/assets/og-default.jpg",
+    "description": "A UK-based charity dedicated to advancing fertility and reproductive health research, improving care, and strengthening the research community.",
+    "email": "{{ site.contactEmail }}",
+    "foundingDate": "2026",
+    "areaServed": "United Kingdom",
+    "sameAs": [
+      "{{ site.social.twitter }}",
+      "{{ site.social.linkedin }}",
+      "{{ site.social.facebook }}"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -17,6 +53,11 @@
   </main>
 
   {%- include "footer.njk" -%}
+
+  <!-- Back to top -->
+  <a href="#" class="back-to-top" aria-label="Back to top" id="back-to-top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </a>
 
   <script src="/script.js"></script>
 </body>

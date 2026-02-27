@@ -1,8 +1,8 @@
   <!-- ======== HEADER ======== -->
   <header class="site-header" role="banner">
     <div class="container">
-      <a href="/" aria-label="Fertility Research UK — Home">
-        <img src="/assets/logo.svg" alt="Fertility Research UK" class="logo">
+      <a href="/" class="logo-link" aria-label="Fertility Research UK — Home">
+        <span class="logo-text">Fertility Research <strong>UK</strong></span>
       </a>
 
       <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
@@ -14,7 +14,8 @@
           <li><a href="/"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
           <li><a href="/about/"{% if page.url == "/about/" %} class="active"{% endif %}>About</a></li>
           <li><a href="/research/"{% if page.url == "/research/" %} class="active"{% endif %}>Research</a></li>
-          <li><a href="/support/"{% if page.url == "/support/" %} class="active"{% endif %}>Support</a></li>
+          <li><a href="/news/"{% if page.url == "/news/" %} class="active"{% endif %}>News</a></li>
+          <li><a href="/fundraising/"{% if page.url == "/fundraising/" %} class="active"{% endif %}>Fundraising</a></li>
           <li><a href="/team/"{% if page.url == "/team/" %} class="active"{% endif %}>Our Team</a></li>
         </ul>
       </nav>

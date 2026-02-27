@@ -68,7 +68,7 @@ working_together: >
   findings into practice. If you'd like to discuss research funding
   opportunities, patient and public involvement (PPI), dissemination and
   impact, or strategic partnerships and knowledge exchange—please
-  <a href="/support/#contact">get in touch</a>.
+  <a href="/fundraising/#contact">get in touch</a>.
 
 collaboration_goals:
   - Develop early-career pathways into fertility research
@@ -83,22 +83,22 @@ supporting_researchers_intro: >
   fertility and reproductive health.
 
 researcher_support:
-  - icon: "🌱"
+  - icon: "seedling"
     title: Seed funding & pilot grants
     description: Generate early data for larger funding applications.
-  - icon: "🎓"
+  - icon: "graduation-cap"
     title: Studentships & bursaries
     description: Undergraduate, MSc and PhD opportunities.
-  - icon: "🔭"
+  - icon: "telescope"
     title: Early-career fellowships
     description: Protected research time and career development.
-  - icon: "✈️"
+  - icon: "plane"
     title: Conference & training support
     description: Travel bursaries and skills workshops.
-  - icon: "🗣️"
+  - icon: "megaphone"
     title: Mentoring & networking
     description: Linking early-career researchers with senior academics and clinicians.
-  - icon: "🤲"
+  - icon: "hands"
     title: PPI support
     description: Helping design relevant, ethical, impactful studies with patient and public involvement.
 

@@ -8,12 +8,12 @@
 
 /* ---- Design tokens ---- */
 :root {
-  --primary:       #D4782F;
-  --primary-dark:  #B85A18;
-  --primary-light: #F5E6D8;
-  --accent:        #2A7F6F;
-  --accent-light:  #E0F0EC;
-  --bg:            #FFF8F2;
+  --primary:       #D4922F;
+  --primary-dark:  #B07620;
+  --primary-light: #FBF0D8;
+  --accent:        #2B7A8C;
+  --accent-light:  #DFF0F4;
+  --bg:            #FFFBF2;
   --bg-white:      #FFFFFF;
   --text:          #1E1E1E;
   --muted:         #6B6B6B;
@@ -113,10 +113,20 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   justify-content: space-between;
 }
-.logo {
-  height: 38px;
-  width: auto;
+.logo-link {
+  text-decoration: none;
   flex-shrink: 0;
+}
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.logo-text strong {
+  color: var(--primary);
+  font-weight: 700;
 }
 
 /* Desktop nav */
@@ -263,6 +273,12 @@ p:last-child { margin-bottom: 0; }
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+/* Home page hero */
+.hero--home {
+  padding: 6rem 0 5rem;
+  background: var(--bg);
 }
 /* Subtle geometric motif */
 .hero::before {
@@ -443,50 +459,137 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ============================================================
-   ACCORDION (Research page — uses <details>/<summary>)
+   TRUSTEE CARDS (prominent horizontal layout)
    ============================================================ */
-.accordion {
-  max-width: 800px;
-  margin: 0 auto;
+.trustee-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
 }
-.accordion details {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  margin-bottom: 0.75rem;
+@media (min-width: 768px) {
+  .trustee-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.trustee-card {
   background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
   transition: box-shadow var(--transition);
+  border-top: 4px solid var(--primary);
+  border-left: none;
 }
-.accordion details[open] {
-  box-shadow: var(--shadow);
+.trustee-card:hover {
+  box-shadow: var(--shadow-lg);
 }
-.accordion summary {
-  padding: 1rem 1.25rem;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  list-style: none;
+.trustee-card__avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--primary-light);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-.accordion summary::-webkit-details-marker { display: none; }
-.accordion summary::after {
-  content: '+';
-  font-size: 1.3rem;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
   color: var(--primary);
   flex-shrink: 0;
-  transition: transform var(--transition);
 }
-.accordion details[open] summary::after {
-  content: '−';
+.trustee-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.accordion .accordion__body {
-  padding: 0 1.25rem 1.25rem;
+.trustee-card__body {
+  min-width: 0;
+}
+.trustee-card__name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.15rem;
+}
+.trustee-card__role {
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.trustee-card__bio {
   color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.9rem;
+}
+.trustee-card__quote {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── LinkedIn link (inline after name) ── */
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 0.35rem;
+  color: var(--muted);
+  opacity: 0.55;
+  transition: color 0.2s, opacity 0.2s;
+}
+.linkedin-link:hover {
+  color: #0A66C2;
+  opacity: 1;
+}
+
+/* ============================================================
+   TOPIC GRID (Research page — areas of interest)
+   ============================================================ */
+.topic-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .topic-grid { grid-template-columns: repeat(2, 1fr); }
+  .topic-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 0.625rem);
+    margin-inline: auto;
+  }
+}
+.topic-item {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--accent);
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+.topic-item:hover {
+  box-shadow: var(--shadow);
+  border-left-color: var(--primary);
+}
+.topic-item__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+  color: var(--heading);
+}
+.topic-item__desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 0;
 }
 
 /* ============================================================
@@ -637,6 +740,129 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ============================================================
+   DECORATIVE IMAGES — varied treatments per page
+   ============================================================ */
+
+/* --- A) Inset rounded image (homepage) --- */
+.image-inset {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.image-inset img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: var(--radius-lg);
+  filter: saturate(0.75);
+  opacity: 0.8;
+}
+@media (min-width: 768px) {
+  .image-inset img { height: 260px; }
+}
+
+/* --- B) Side image in section (about) --- */
+.image-side {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+}
+.image-side__pic {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+.image-side__pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8) brightness(1.02);
+  opacity: 0.85;
+}
+.image-side__text {
+  color: var(--muted);
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+@media (min-width: 768px) {
+  .image-side {
+    grid-template-columns: 1fr 1.2fr;
+    padding: 3.5rem 1.25rem;
+  }
+}
+
+/* --- C) Full-width band with angled clip (research) --- */
+.image-band-angled {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);
+}
+.image-band-angled img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: saturate(0.75) brightness(1.05);
+  opacity: 0.8;
+}
+@media (min-width: 768px) {
+  .image-band-angled { height: 260px; }
+}
+
+/* --- D) Circular vignette (support) --- */
+.image-circle-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1.25rem;
+}
+.image-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid var(--primary-light);
+  box-shadow: var(--shadow);
+}
+.image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8);
+  opacity: 0.85;
+}
+.image-circle:nth-child(2) {
+  margin-top: 1.5rem;
+}
+@media (min-width: 600px) {
+  .image-circle { width: 240px; height: 240px; }
+}
+
+/* --- E) Image accent in two-col layouts --- */
+.image-accent {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-height: 260px;
+}
+.image-accent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8) brightness(1.02);
+  opacity: 0.85;
+  border-radius: var(--radius-lg);
+}
+
+/* ============================================================
    UTILITIES
    ============================================================ */
 .text-center  { text-align: center; }
@@ -654,4 +880,166 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+}
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 90;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background var(--transition);
+}
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  background: var(--primary-dark);
+  color: #fff;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   NEWS CARDS (homepage summary)
+   ============================================================ */
+.news-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.news-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+.news-card__image {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+.news-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.news-card__date,
+.news-card h3,
+.news-card p {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.news-card__date {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+  padding-top: 1.25rem;
+}
+.news-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+.news-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding-bottom: 1.5rem;
+}
+
+/* ============================================================
+   NEWS ITEMS (full news page)
+   ============================================================ */
+.news-item {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.news-item:first-child {
+  padding-top: 0;
+}
+.news-item:last-child {
+  border-bottom: none;
+}
+.news-item__image {
+  width: 100%;
+  max-height: 280px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.25rem;
+}
+.news-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.news-item__date {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.news-item__headline {
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  margin-bottom: 0.75rem;
+}
+.news-item__body {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.news-item__body p {
+  margin-bottom: 0.75em;
+}
+.news-item__body a {
+  color: var(--primary-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--primary-light);
+  text-underline-offset: 2px;
+}
+.news-item__body a:hover {
+  color: var(--primary);
+  text-decoration-color: var(--primary);
+}
+
+/* ── Footer social icons ─── */
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  transition: background 0.2s, color 0.2s;
+}
+.footer-social a:hover {
+  background: var(--primary);
+  color: #fff;
 }

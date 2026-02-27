@@ -30,31 +30,31 @@ volunteers_intro: >
 
 # ── Advisory Group cards ──
 advisor_cards:
-  - icon: "🧬"
+  - icon: "dna"
     title: Research priorities
     description: Shaping calls for proposals and research direction.
-  - icon: "✅"
+  - icon: "check-circle"
     title: Peer review
     description: Due diligence and quality assurance where appropriate.
-  - icon: "🔄"
+  - icon: "refresh"
     title: Translation & impact
     description: Guidance on dissemination and real-world application.
 
 # ── Volunteer cards ──
 volunteer_cards:
-  - icon: "🎉"
+  - icon: "sparkles"
     title: Events & fundraising
     description: Help organise and promote events and campaigns.
-  - icon: "💬"
+  - icon: "message-circle"
     title: Community engagement
     description: Connect with patients, families and local communities.
-  - icon: "✏️"
+  - icon: "pen"
     title: Content & communications
     description: Support writing, social media and outreach.
-  - icon: "📁"
+  - icon: "folder"
     title: Admin & project support
     description: Administrative and organisational assistance.
-  - icon: "⚙️"
+  - icon: "settings"
     title: Professional skills
     description: Design, legal, finance, HR and other pro-bono expertise.
 ---

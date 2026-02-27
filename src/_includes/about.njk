@@ -30,6 +30,14 @@ layout: base.njk
       </div>
     </section>
 
+    <!-- decorative image -->
+    <div class="image-side" aria-hidden="true">
+      <div class="image-side__pic">
+        <img src="/assets/stock-review/02-female-scientist-nci.jpg" alt="" loading="lazy">
+      </div>
+      <p class="image-side__text">&ldquo;Research is one of the most effective ways to improve fertility outcomes, patient experience and long-term reproductive health.&rdquo;</p>
+    </div>
+
     <!-- ======== VISION & MISSION ======== -->
     <section class="section" id="vision-mission">
       <div class="container">
@@ -57,7 +65,7 @@ layout: base.njk
         <div class="card-grid card-grid--3" style="max-width:800px; margin:0 auto;">
           {% for card in research_approach %}
           <div class="card">
-            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon }}</div>
+            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon | svgicon | safe }}</div>
             <h3>{{ card.title }}</h3>
             <p>{{ card.description }}</p>
           </div>
@@ -75,6 +83,20 @@ layout: base.njk
         </div>
         <div class="text-center">
           <a href="/team/" class="btn btn-secondary">Meet our team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== PATIENT SIGNPOSTING ======== -->
+    <section class="section section--alt" id="patients">
+      <div class="container" style="max-width:700px;">
+        <div class="section__header">
+          <h2>For Patients &amp; Families</h2>
+        </div>
+        <p>If you are experiencing fertility challenges, you are not alone. While Fertility Research UK is not a clinical service, our work aims to improve diagnosis, treatment and care for everyone affected.</p>
+        <div class="info-box mt-3">
+          <p><strong>Need medical advice?</strong> Please speak to your GP or fertility specialist.</p>
+          <p class="mt-1"><strong>In urgent distress or crisis?</strong> Contact <strong>NHS&nbsp;111</strong> (or <strong>999</strong> in an emergency).</p>
         </div>
       </div>
     </section>

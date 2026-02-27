@@ -33,37 +33,37 @@ callouts:
 
 # ── What We Do cards ──
 what_we_do:
-  - icon: "🔬"
+  - icon: "microscope"
     title: Fund & support research
     description: >
       We raise funds to support well-designed fertility research
       projects—from early-stage studies to work that can lead to changes in
       clinical practice.
-  - icon: "🤝"
+  - icon: "handshake"
     title: Bring people together
     description: >
       We help build partnerships between researchers, clinicians, patients,
       charities and other stakeholders to reduce duplication and speed up
       progress.
-  - icon: "📖"
+  - icon: "book-open"
     title: Evidence-based information
     description: >
       We share clear, trustworthy information about fertility research and
       reproductive health, helping patients understand what is known, what is
       uncertain, and what research is trying to solve.
-  - icon: "💡"
+  - icon: "lightbulb"
     title: Champion better care
     description: >
       We want research to lead to practical improvements: earlier diagnosis,
       safer and more effective treatment, better guidance, and more consistent
       support services.
-  - icon: "🎓"
+  - icon: "graduation-cap"
     title: Support next-generation researchers
     description: >
       We support early-career researchers by helping create opportunities,
       visibility and practical support—so promising ideas and new approaches
       are not lost.
-  - icon: "🌐"
+  - icon: "globe"
     title: Grow the research community
     description: >
       We work to attract more researchers into fertility and reproductive

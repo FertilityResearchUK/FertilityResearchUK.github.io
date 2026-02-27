@@ -17,26 +17,37 @@ layout: base.njk
           <p>{{ trustees_intro }}</p>
         </div>
 
-        <div class="people-grid">
+        <div class="trustee-grid">
           {% for person in collections.trustees %}
-          <div class="person-card">
-            <div class="person-card__avatar" aria-hidden="true">
+          <div class="trustee-card">
+            <div class="trustee-card__avatar" aria-hidden="true">
               {% if person.data.photo %}
                 <img src="{{ person.data.photo }}" alt="{{ person.data.name }}">
               {% else %}
                 {{ person.data.name | initials }}
               {% endif %}
             </div>
-            <div class="person-card__name">{{ person.data.name }}</div>
-            <p class="person-card__bio">{{ person.data.bio }}</p>
-            {% if person.data.quote %}
-            <p class="person-card__quote">&ldquo;{{ person.data.quote }}&rdquo;</p>
-            {% endif %}
+            <div class="trustee-card__body">
+              <div class="trustee-card__name">
+                {{ person.data.name }}
+                {% if person.data.linkedin %}<a href="{{ person.data.linkedin }}" class="linkedin-link" target="_blank" rel="noopener" aria-label="{{ person.data.name }} on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>{% endif %}
+              </div>
+              {% if person.data.role %}<p class="trustee-card__role">{{ person.data.role }}</p>{% endif %}
+              <p class="trustee-card__bio">{{ person.data.bio }}</p>
+              {% if person.data.quote %}
+              <p class="trustee-card__quote">&ldquo;{{ person.data.quote }}&rdquo;</p>
+              {% endif %}
+            </div>
           </div>
           {% endfor %}
         </div>
       </div>
     </section>
+
+    <!-- decorative image -->
+    <div class="image-inset mt-4 mb-3" aria-hidden="true">
+      <img src="/assets/stock-review/09-team-collaboration.jpg" alt="" loading="lazy">
+    </div>
 
     <!-- ======== TEAM MEMBERS ======== -->
     <section class="section" id="team-members">
@@ -56,7 +67,10 @@ layout: base.njk
                 {{ person.data.name | initials }}
               {% endif %}
             </div>
-            <div class="person-card__name">{{ person.data.name }}</div>
+            <div class="person-card__name">
+              {{ person.data.name }}
+              {% if person.data.linkedin %}<a href="{{ person.data.linkedin }}" class="linkedin-link" target="_blank" rel="noopener" aria-label="{{ person.data.name }} on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>{% endif %}
+            </div>
             <p class="person-card__bio">{{ person.data.bio }}</p>
             {% if person.data.quote %}
             <p class="person-card__quote">&ldquo;{{ person.data.quote }}&rdquo;</p>
@@ -78,7 +92,7 @@ layout: base.njk
         <div class="card-grid card-grid--3" style="max-width:800px; margin:0 auto;">
           {% for card in advisor_cards %}
           <div class="card">
-            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon }}</div>
+            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon | svgicon | safe }}</div>
             <h3>{{ card.title }}</h3>
             <p>{{ card.description }}</p>
           </div>
@@ -98,7 +112,7 @@ layout: base.njk
         <div class="card-grid card-grid--3" style="max-width:800px; margin:0 auto;">
           {% for card in volunteer_cards %}
           <div class="card">
-            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon }}</div>
+            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon | svgicon | safe }}</div>
             <h3>{{ card.title }}</h3>
             <p>{{ card.description }}</p>
           </div>
@@ -107,7 +121,7 @@ layout: base.njk
 
         <div class="text-center mt-4">
           <p class="text-muted mb-2">We welcome volunteers from across the UK — remote or in person.</p>
-          <a href="/support/#contact" class="btn btn-primary">Volunteer with us</a>
+          <a href="/fundraising/#contact" class="btn btn-primary">Volunteer with us</a>
         </div>
       </div>
     </section>

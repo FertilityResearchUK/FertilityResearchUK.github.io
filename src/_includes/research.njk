@@ -10,25 +10,28 @@ layout: base.njk
       </div>
     </section>
 
-    <!-- ======== RESEARCH FOCUS AREAS (accordion) ======== -->
+    <!-- ======== RESEARCH FOCUS AREAS ======== -->
     <section class="section section--alt" id="focus-areas">
       <div class="container">
         <div class="section__header">
           <h2>Current Areas of Interest</h2>
         </div>
 
-        <div class="accordion">
+        <div class="topic-grid">
           {% for area in focus_areas %}
-          <details>
-            <summary>{{ area.title }}</summary>
-            <div class="accordion__body">
-              <p>{{ area.description }}</p>
-            </div>
-          </details>
+          <div class="topic-item">
+            <h3 class="topic-item__title">{{ area.title }}</h3>
+            <p class="topic-item__desc">{{ area.description }}</p>
+          </div>
           {% endfor %}
         </div>
       </div>
     </section>
+
+    <!-- decorative image -->
+    <div class="image-band-angled" aria-hidden="true">
+      <img src="/assets/stock-review/16-dna-hero.jpg" alt="" loading="lazy">
+    </div>
 
     <!-- ======== FOR RESEARCHERS & CLINICIANS ======== -->
     <section class="section" id="for-researchers">
@@ -66,7 +69,7 @@ layout: base.njk
         <div class="card-grid card-grid--3">
           {% for card in researcher_support %}
           <div class="card">
-            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon }}</div>
+            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon | svgicon | safe }}</div>
             <h3>{{ card.title }}</h3>
             <p>{{ card.description }}</p>
           </div>
@@ -75,8 +78,8 @@ layout: base.njk
 
         <div class="text-center mt-4">
           <p class="text-muted mb-2">We will work towards clear, transparent processes for opportunities we offer, including published eligibility criteria, timelines and selection approaches.</p>
-          <a href="/support/#contact" class="btn btn-primary">Register your interest</a>
-          <a href="/support/#contact" class="btn btn-secondary" style="margin-left:0.5rem;">Partner with us</a>
+          <a href="/fundraising/#contact" class="btn btn-primary">Register your interest</a>
+          <a href="/fundraising/#contact" class="btn btn-secondary" style="margin-left:0.5rem;">Partner with us</a>
         </div>
       </div>
     </section>
@@ -88,6 +91,9 @@ layout: base.njk
           <div>
             <h2>Fund an Early-Career Researcher</h2>
             <p>{{ early_career_intro }}</p>
+            <div class="image-accent mt-2" aria-hidden="true">
+              <img src="/assets/stock-review/03-researcher-microscope.jpg" alt="" loading="lazy">
+            </div>
           </div>
           <div>
             <h3>Why early-career support matters</h3>
