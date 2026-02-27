@@ -430,6 +430,16 @@ p:last-child { margin-bottom: 0; }
 .person-card__bio {
   color: var(--muted);
   font-size: 0.9rem;
+  text-align: left;
+}
+.person-card__quote {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  text-align: left;
 }
 
 /* ============================================================
