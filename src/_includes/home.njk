@@ -1,0 +1,59 @@
+---
+layout: base.njk
+---
+    <!-- ======== HERO ======== -->
+    <section class="hero">
+      <div class="container">
+        <h1>{{ hero_title }}</h1>
+        <p class="tagline">{{ hero_tagline }}</p>
+        <p class="lead">{{ hero_lead }}</p>
+        <div class="hero-actions">
+          <a href="/research/" class="btn btn-primary">Our research focus</a>
+          <a href="/support/" class="btn btn-secondary">Get support &amp; information</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== OUR PURPOSE ======== -->
+    <section class="section section--alt" id="purpose">
+      <div class="container">
+        <div class="section__header">
+          <h2>Our Purpose</h2>
+          <p>{{ purpose_intro }}</p>
+          <p class="mt-2">{{ purpose_mission }}</p>
+        </div>
+
+        <!-- Did you know? callouts -->
+        <div class="card-grid card-grid--3">
+          {% for item in callouts %}
+          <div class="callout">
+            <p><strong>Did you know?</strong> {{ item }}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="text-center mt-4" style="max-width:720px; margin-left:auto; margin-right:auto;">
+          {{ content | safe }}
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== WHAT WE DO ======== -->
+    <section class="section" id="what-we-do">
+      <div class="container">
+        <div class="section__header">
+          <h2>What We Do</h2>
+          <p>Clear goals for patients, researchers and the wider community.</p>
+        </div>
+
+        <div class="card-grid card-grid--3">
+          {% for card in what_we_do %}
+          <div class="card">
+            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon }}</div>
+            <h3>{{ card.title }}</h3>
+            <p>{{ card.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>

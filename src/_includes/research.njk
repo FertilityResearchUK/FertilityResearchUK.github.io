@@ -1,0 +1,105 @@
+---
+layout: base.njk
+---
+    <!-- ======== RESEARCH HERO ======== -->
+    <section class="hero">
+      <div class="container">
+        <h1>{{ hero_title }}</h1>
+        <p class="tagline">{{ hero_tagline }}</p>
+        <p class="lead">{{ hero_lead }}</p>
+      </div>
+    </section>
+
+    <!-- ======== RESEARCH FOCUS AREAS (accordion) ======== -->
+    <section class="section section--alt" id="focus-areas">
+      <div class="container">
+        <div class="section__header">
+          <h2>Current Areas of Interest</h2>
+        </div>
+
+        <div class="accordion">
+          {% for area in focus_areas %}
+          <details>
+            <summary>{{ area.title }}</summary>
+            <div class="accordion__body">
+              <p>{{ area.description }}</p>
+            </div>
+          </details>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== FOR RESEARCHERS & CLINICIANS ======== -->
+    <section class="section" id="for-researchers">
+      <div class="container">
+        <div class="section__header">
+          <h2>For Researchers, Clinicians &amp; Stakeholders</h2>
+          <p>We welcome collaboration with universities, NHS services, professional bodies, funders, and patient communities.</p>
+        </div>
+
+        <div class="two-col">
+          <div>
+            <h3>Working together</h3>
+            <p>{{ working_together | safe }}</p>
+          </div>
+          <div>
+            <h3>We welcome collaboration to</h3>
+            <ul style="padding-left:1.25rem; color:var(--muted);">
+              {% for item in collaboration_goals %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== SUPPORTING RESEARCHERS ======== -->
+    <section class="section section--alt" id="supporting-researchers">
+      <div class="container">
+        <div class="section__header">
+          <h2>Supporting Researchers</h2>
+          <p>{{ supporting_researchers_intro }}</p>
+        </div>
+
+        <div class="card-grid card-grid--3">
+          {% for card in researcher_support %}
+          <div class="card">
+            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon }}</div>
+            <h3>{{ card.title }}</h3>
+            <p>{{ card.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="text-center mt-4">
+          <p class="text-muted mb-2">We will work towards clear, transparent processes for opportunities we offer, including published eligibility criteria, timelines and selection approaches.</p>
+          <a href="/support/#contact" class="btn btn-primary">Register your interest</a>
+          <a href="/support/#contact" class="btn btn-secondary" style="margin-left:0.5rem;">Partner with us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== EARLY-CAREER IMPACT ======== -->
+    <section class="section" id="early-career">
+      <div class="container">
+        <div class="two-col">
+          <div>
+            <h2>Fund an Early-Career Researcher</h2>
+            <p>{{ early_career_intro }}</p>
+          </div>
+          <div>
+            <h3>Why early-career support matters</h3>
+            <ul style="padding-left:1.25rem; color:var(--muted);">
+              {% for item in early_career_reasons %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+            <div class="mt-2">
+              <button class="btn btn-primary" disabled>Support a researcher <span class="btn-badge">Coming soon</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

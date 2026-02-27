@@ -1,0 +1,80 @@
+---
+layout: base.njk
+---
+    <!-- ======== ABOUT HERO ======== -->
+    <section class="hero">
+      <div class="container">
+        <h1>{{ hero_title }}</h1>
+        <p class="tagline">{{ hero_tagline }}</p>
+      </div>
+    </section>
+
+    <!-- ======== OUR COMMITMENTS ======== -->
+    <section class="section section--alt" id="commitments">
+      <div class="container">
+        <div class="section__header">
+          <h2>What We Stand For</h2>
+        </div>
+
+        <ul class="commitment-list">
+          {% for item in commitments %}
+          <li>
+            <span class="marker" aria-hidden="true">✦</span>
+            <div>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======== VISION & MISSION ======== -->
+    <section class="section" id="vision-mission">
+      <div class="container">
+        <div class="two-col">
+          <div>
+            <h2>Our Vision</h2>
+            <p>{{ vision }}</p>
+          </div>
+          <div>
+            <h2>Our Mission</h2>
+            <p>{{ mission }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== RESEARCH RESPONSIBLY ======== -->
+    <section class="section section--alt" id="quality">
+      <div class="container">
+        <div class="section__header">
+          <h2>How We Approach Research Responsibly</h2>
+          <p>We aim to support research that is ethical, transparent and methodologically sound.</p>
+        </div>
+
+        <div class="card-grid card-grid--3" style="max-width:800px; margin:0 auto;">
+          {% for card in research_approach %}
+          <div class="card">
+            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon }}</div>
+            <h3>{{ card.title }}</h3>
+            <p>{{ card.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== INTEGRITY ======== -->
+    <section class="section" id="integrity">
+      <div class="container">
+        <div class="section__header">
+          <h2>Our Commitment to Integrity</h2>
+          <p>{{ integrity }}</p>
+        </div>
+        <div class="text-center">
+          <a href="/team/" class="btn btn-secondary">Meet our team</a>
+        </div>
+      </div>
+    </section>

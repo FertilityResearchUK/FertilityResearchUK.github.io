@@ -1,0 +1,22 @@
+  <!-- ======== HEADER ======== -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/" aria-label="Fertility Research UK — Home">
+        <img src="/assets/logo.svg" alt="Fertility Research UK" class="logo">
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="/"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
+          <li><a href="/about/"{% if page.url == "/about/" %} class="active"{% endif %}>About</a></li>
+          <li><a href="/research/"{% if page.url == "/research/" %} class="active"{% endif %}>Research</a></li>
+          <li><a href="/support/"{% if page.url == "/support/" %} class="active"{% endif %}>Support</a></li>
+          <li><a href="/team/"{% if page.url == "/team/" %} class="active"{% endif %}>Our Team</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
