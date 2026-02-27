@@ -2,3 +2,13 @@ _site/
 node_modules/
 .DS_Store
 *.log
+
+# Editor / workspace
+*.code-workspace
+
+# Duplicate asset folders at root (originals live in src/assets/)
+/assets/
+
+# Evaluation notes
+EVALUATION-*.md
+_colour-options.html
