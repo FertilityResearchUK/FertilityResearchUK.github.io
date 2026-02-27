@@ -1,0 +1,40 @@
+---
+layout: base.njk
+---
+    <!-- ======== NEWS HERO ======== -->
+    <section class="hero">
+      <div class="container">
+        <h1>{{ hero_title | default("News & Updates") }}</h1>
+        <p class="tagline">{{ hero_tagline | default("Announcements, updates and progress from Fertility Research UK.") }}</p>
+        <a href="/feed.xml" class="btn btn-secondary btn-small mt-2" style="display:inline-flex;align-items:center;gap:0.4rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+          Subscribe via RSS
+        </a>
+      </div>
+    </section>
+
+    <!-- ======== NEWS LIST ======== -->
+    <section class="section section--alt">
+      <div class="container" style="max-width:800px;">
+        {% for post in collections.news | reverse %}
+        <article class="news-item">
+          {% if post.data.image %}
+          <div class="news-item__image">
+            <img src="{{ post.data.image }}" alt="" loading="lazy">
+          </div>
+          {% endif %}
+          <time class="news-item__date" datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+          <h2 class="news-item__headline">{{ post.data.headline }}</h2>
+          <div class="news-item__body">
+            {{ post.templateContent | safe }}
+          </div>
+        </article>
+        {% endfor %}
+
+        {% if not collections.news.length %}
+        <div class="text-center text-muted">
+          <p>No news yet — check back soon.</p>
+        </div>
+        {% endif %}
+      </div>
+    </section>
