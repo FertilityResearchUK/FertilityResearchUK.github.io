@@ -134,3 +134,4 @@ This repository is configured for static output deployment.
 - `npm test` is currently a placeholder and intentionally exits with an error.
 - Update `src/_data/site.js` for site-wide metadata (URL, socials, organisation details).
 - Contact form endpoint is set in `src/_includes/support.njk`.
+
