@@ -11,7 +11,11 @@ hero_lead: >
   We will update our priority areas as the evidence base evolves and as we
   learn from patients, clinicians and researchers.
 
-# ── Focus Areas (accordion) ──
+# ── Focus Areas ──
+focus_areas_intro: >
+  Eleven themes we expect to support over time—always evolving as science,
+  policy and lived experience tell us where new evidence is most needed.
+
 focus_areas:
   - title: Basic research in reproductive biology
     description: >
@@ -83,22 +87,22 @@ supporting_researchers_intro: >
   fertility and reproductive health.
 
 researcher_support:
-  - icon: "seedling"
+  - icon: seedling
     title: Seed funding & pilot grants
     description: Generate early data for larger funding applications.
-  - icon: "graduation-cap"
+  - icon: graduation-cap
     title: Studentships & bursaries
     description: Undergraduate, MSc and PhD opportunities.
-  - icon: "telescope"
+  - icon: telescope
     title: Early-career fellowships
     description: Protected research time and career development.
-  - icon: "plane"
+  - icon: plane
     title: Conference & training support
     description: Travel bursaries and skills workshops.
-  - icon: "megaphone"
+  - icon: megaphone
     title: Mentoring & networking
     description: Linking early-career researchers with senior academics and clinicians.
-  - icon: "hands"
+  - icon: hands
     title: PPI support
     description: Helping design relevant, ethical, impactful studies with patient and public involvement.
 

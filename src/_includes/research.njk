@@ -11,18 +11,23 @@ layout: base.njk
     </section>
 
     <!-- ======== RESEARCH FOCUS AREAS ======== -->
-    <section class="section section--alt" id="focus-areas">
+    <section class="section section--focus-areas" id="focus-areas">
       <div class="container">
-        <div class="section__header">
+        <div class="section__header section__header--focus">
+          <p class="section__kicker">What we fund</p>
           <h2>Current Areas of Interest</h2>
+          {% if focus_areas_intro %}
+          <p class="section__deck">{{ focus_areas_intro }}</p>
+          {% endif %}
         </div>
 
-        <div class="topic-grid">
+        <div class="focus-areas-grid">
           {% for area in focus_areas %}
-          <div class="topic-item">
-            <h3 class="topic-item__title">{{ area.title }}</h3>
-            <p class="topic-item__desc">{{ area.description }}</p>
-          </div>
+          <article class="focus-area-card{% if loop.index0 % 2 == 1 %} focus-area-card--accent{% endif %}">
+            <span class="focus-area-card__num" aria-hidden="true">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+            <h3 class="focus-area-card__title">{{ area.title }}</h3>
+            <p class="focus-area-card__desc">{{ area.description }}</p>
+          </article>
           {% endfor %}
         </div>
       </div>
@@ -69,7 +74,7 @@ layout: base.njk
         <div class="card-grid card-grid--3">
           {% for card in researcher_support %}
           <div class="card">
-            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon | svgicon | safe }}</div>
+            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}" aria-hidden="true">{{ card.icon | svgicon | safe }}</div>
             <h3>{{ card.title }}</h3>
             <p>{{ card.description }}</p>
           </div>
