@@ -11,6 +11,10 @@ hero_tagline: >
   outcomes, patient experience and long-term reproductive health.
 
 # ── Commitments ──
+commitments_intro: >
+  Five principles that shape what we fund, who we listen to and how we work with
+  researchers and communities across the UK.
+
 commitments:
   - title: Evidence & impact
     description: Prioritising high-quality research with clear potential to improve understanding and care.
@@ -35,14 +39,11 @@ mission: >
 
 # ── Research Approach cards ──
 research_approach:
-  - icon: "clipboard"
-    title: Transparent funding
+  - title: Transparent funding
     description: How funding decisions are made and what projects we support and why.
-  - icon: "bar-chart"
-    title: Progress & outcomes
+  - title: Progress & outcomes
     description: Regular updates on supported projects and their outcomes and impact.
-  - icon: "heart"
-    title: Lived experience informs priorities
+  - title: Lived experience informs priorities
     description: How patient and public voices shape our research agenda and strategic direction.
 
 # ── Integrity ──

@@ -10,23 +10,27 @@ layout: base.njk
     </section>
 
     <!-- ======== OUR COMMITMENTS ======== -->
-    <section class="section section--alt" id="commitments">
+    <section class="section section--values" id="commitments">
       <div class="container">
-        <div class="section__header">
+        <div class="section__header section__header--values">
+          <p class="section__kicker">Our values</p>
           <h2>What We Stand For</h2>
+          {% if commitments_intro %}
+          <p class="section__deck">{{ commitments_intro }}</p>
+          {% endif %}
         </div>
 
-        <ul class="commitment-list">
+        <div class="commitments-showcase">
           {% for item in commitments %}
-          <li>
-            <span class="marker" aria-hidden="true">✦</span>
-            <div>
+          <article class="commitment-card{% if loop.first %} commitment-card--lead{% endif %}{% if loop.index0 % 2 == 1 %} commitment-card--accent{% endif %}">
+            <span class="commitment-card__num" aria-hidden="true">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+            <div class="commitment-card__body">
               <h3>{{ item.title }}</h3>
               <p>{{ item.description }}</p>
             </div>
-          </li>
+          </article>
           {% endfor %}
-        </ul>
+        </div>
       </div>
     </section>
 
@@ -64,8 +68,7 @@ layout: base.njk
 
         <div class="card-grid card-grid--3" style="max-width:800px; margin:0 auto;">
           {% for card in research_approach %}
-          <div class="card">
-            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon | svgicon | safe }}</div>
+          <div class="card card--cue{% if loop.index0 % 2 == 1 %} card--cue-accent{% endif %}">
             <h3>{{ card.title }}</h3>
             <p>{{ card.description }}</p>
           </div>
