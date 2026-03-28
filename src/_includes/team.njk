@@ -17,65 +17,79 @@ layout: base.njk
           <p>{{ trustees_intro }}</p>
         </div>
 
-        <div class="trustee-grid">
+        <div class="people-grid people-grid--profiles people-grid--trustees">
           {% for person in collections.trustees %}
-          <div class="trustee-card">
-            <div class="trustee-card__avatar" aria-hidden="true">
+          <article class="person-card person-card--portrait">
+            <div class="person-card__media">
               {% if person.data.photo %}
-                <img src="{{ person.data.photo }}" alt="{{ person.data.name }}">
+              <img src="{{ person.data.photo }}" alt="" loading="lazy" decoding="async">
               {% else %}
-                {{ person.data.name | initials }}
+              <div class="person-card__placeholder" aria-hidden="true">{{ person.data.name | initials }}</div>
               {% endif %}
             </div>
-            <div class="trustee-card__body">
-              <div class="trustee-card__name">
-                {{ person.data.name }}
-                {% if person.data.linkedin %}<a href="{{ person.data.linkedin }}" class="linkedin-link" target="_blank" rel="noopener" aria-label="{{ person.data.name }} on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>{% endif %}
+            <div class="person-card__body">
+              <div class="person-card__name-row">
+                <h3 class="person-card__name">{{ person.data.name }}</h3>
+                {% if person.data.linkedin %}<a href="{{ person.data.linkedin }}" class="linkedin-link" target="_blank" rel="noopener" aria-label="{{ person.data.name }} on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>{% endif %}
               </div>
-              {% if person.data.role %}<p class="trustee-card__role">{{ person.data.role }}</p>{% endif %}
-              <p class="trustee-card__bio">{{ person.data.bio }}</p>
-              {% if person.data.quote %}
-              <p class="trustee-card__quote">&ldquo;{{ person.data.quote }}&rdquo;</p>
+              {% if person.data.role %}<p class="person-card__role">{{ person.data.role }}</p>{% endif %}
+              {% if person.data.bio or person.data.quote %}
+              <details class="person-card__details">
+                <summary class="person-card__summary">
+                  <span>Read more</span>
+                  <span class="person-card__chev" aria-hidden="true"></span>
+                </summary>
+                <div class="person-card__expand">
+                  {% if person.data.bio %}<p class="person-card__bio">{{ person.data.bio }}</p>{% endif %}
+                  {% if person.data.quote %}<p class="person-card__quote">&ldquo;{{ person.data.quote }}&rdquo;</p>{% endif %}
+                </div>
+              </details>
               {% endif %}
             </div>
-          </div>
+          </article>
           {% endfor %}
         </div>
       </div>
     </section>
 
-    <!-- decorative image -->
-    <div class="image-inset mt-4 mb-3" aria-hidden="true">
-      <img src="/assets/stock-review/09-team-collaboration.jpg" alt="" loading="lazy">
-    </div>
-
     <!-- ======== TEAM MEMBERS ======== -->
-    <section class="section" id="team-members">
+    <section class="section section--team-members" id="team-members">
       <div class="container">
-        <div class="section__header">
+        <div class="section__header section__header--team">
           <h2>Who We Are</h2>
-          <p>{{ team_intro }}</p>
+          <p class="section__deck section__deck--tight">{{ team_intro }}</p>
         </div>
 
-        <div class="people-grid">
+        <div class="people-grid people-grid--profiles people-grid--who-we-are">
           {% for person in collections.teamMembers %}
-          <div class="person-card">
-            <div class="person-card__avatar" aria-hidden="true">
+          <article class="person-card person-card--portrait">
+            <div class="person-card__media">
               {% if person.data.photo %}
-                <img src="{{ person.data.photo }}" alt="{{ person.data.name }}">
+              <img src="{{ person.data.photo }}" alt="" loading="lazy" decoding="async">
               {% else %}
-                {{ person.data.name | initials }}
+              <div class="person-card__placeholder" aria-hidden="true">{{ person.data.name | initials }}</div>
               {% endif %}
             </div>
-            <div class="person-card__name">
-              {{ person.data.name }}
-              {% if person.data.linkedin %}<a href="{{ person.data.linkedin }}" class="linkedin-link" target="_blank" rel="noopener" aria-label="{{ person.data.name }} on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>{% endif %}
+            <div class="person-card__body">
+              <div class="person-card__name-row">
+                <h3 class="person-card__name">{{ person.data.name }}</h3>
+                {% if person.data.linkedin %}<a href="{{ person.data.linkedin }}" class="linkedin-link" target="_blank" rel="noopener" aria-label="{{ person.data.name }} on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>{% endif %}
+              </div>
+              {% if person.data.badge %}<p class="person-card__badge">{{ person.data.badge }}</p>{% endif %}
+              {% if person.data.bio or person.data.quote %}
+              <details class="person-card__details">
+                <summary class="person-card__summary">
+                  <span>Read more</span>
+                  <span class="person-card__chev" aria-hidden="true"></span>
+                </summary>
+                <div class="person-card__expand">
+                  {% if person.data.bio %}<p class="person-card__bio">{{ person.data.bio }}</p>{% endif %}
+                  {% if person.data.quote %}<p class="person-card__quote">&ldquo;{{ person.data.quote }}&rdquo;</p>{% endif %}
+                </div>
+              </details>
+              {% endif %}
             </div>
-            <p class="person-card__bio">{{ person.data.bio }}</p>
-            {% if person.data.quote %}
-            <p class="person-card__quote">&ldquo;{{ person.data.quote }}&rdquo;</p>
-            {% endif %}
-          </div>
+          </article>
           {% endfor %}
         </div>
       </div>
@@ -91,8 +105,7 @@ layout: base.njk
 
         <div class="card-grid card-grid--3" style="max-width:800px; margin:0 auto;">
           {% for card in advisor_cards %}
-          <div class="card">
-            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon | svgicon | safe }}</div>
+          <div class="card card--cue{% if loop.index0 % 2 == 1 %} card--cue-accent{% endif %}">
             <h3>{{ card.title }}</h3>
             <p>{{ card.description }}</p>
           </div>
@@ -111,8 +124,7 @@ layout: base.njk
 
         <div class="card-grid card-grid--3" style="max-width:800px; margin:0 auto;">
           {% for card in volunteer_cards %}
-          <div class="card">
-            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon | svgicon | safe }}</div>
+          <div class="card card--cue{% if loop.index0 % 2 == 1 %} card--cue-accent{% endif %}">
             <h3>{{ card.title }}</h3>
             <p>{{ card.description }}</p>
           </div>

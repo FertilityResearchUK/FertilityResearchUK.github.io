@@ -14,11 +14,12 @@ hero_tagline: >
 trustees_intro: >
   Our Trustees are legally responsible for the charity's governance—setting
   strategic direction, ensuring we operate in the public benefit, and
-  overseeing finances, risk and compliance.
+  overseeing finances, risk and compliance. Use Read more on each card for
+  background and a personal reflection.
 
 team_intro: >
-  Our team brings together researchers, clinicians, patients and advocates
-  united by a shared commitment to advancing fertility research across the UK.
+  Researchers, clinicians, advocates and colleagues—use Read more on each
+  card to see their full background and personal quote.
 
 advisors_intro: >
   We are building a network of experts to help ensure our research priorities
@@ -30,31 +31,23 @@ volunteers_intro: >
 
 # ── Advisory Group cards ──
 advisor_cards:
-  - icon: "dna"
-    title: Research priorities
+  - title: Research priorities
     description: Shaping calls for proposals and research direction.
-  - icon: "check-circle"
-    title: Peer review
+  - title: Peer review
     description: Due diligence and quality assurance where appropriate.
-  - icon: "refresh"
-    title: Translation & impact
+  - title: Translation & impact
     description: Guidance on dissemination and real-world application.
 
 # ── Volunteer cards ──
 volunteer_cards:
-  - icon: "sparkles"
-    title: Events & fundraising
+  - title: Events & fundraising
     description: Help organise and promote events and campaigns.
-  - icon: "message-circle"
-    title: Community engagement
+  - title: Community engagement
     description: Connect with patients, families and local communities.
-  - icon: "pen"
-    title: Content & communications
+  - title: Content & communications
     description: Support writing, social media and outreach.
-  - icon: "folder"
-    title: Admin & project support
+  - title: Admin & project support
     description: Administrative and organisational assistance.
-  - icon: "settings"
-    title: Professional skills
+  - title: Professional skills
     description: Design, legal, finance, HR and other pro-bono expertise.
 ---

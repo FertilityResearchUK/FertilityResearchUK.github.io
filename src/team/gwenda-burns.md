@@ -15,7 +15,9 @@ bio: >
   access to fertility treatment across the UK. Since 2010, she has been a
   member of Scotland's National Fertility Group, which played a key role in
   achieving more equitable provision of services, including access to up to
-  three cycles of treatment in line with NICE fertility guidelines.
+  three cycles of treatment in line with NICE fertility guidelines. She remains
+  committed to driving positive change for fertility patients and supporting
+  research efforts that improve fertility care across the UK.
 quote: >
   To help ensure that individuals facing fertility challenges are supported
   by evidence-based, forward-thinking solutions.

@@ -1,5 +1,6 @@
 ---
 name: Anton Petrov
+badge: COO
 photo: /assets/team/anton-petrov.png
 linkedin: https://www.linkedin.com/in/anton-petrov
 tags: team-member

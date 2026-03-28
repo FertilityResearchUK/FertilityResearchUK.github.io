@@ -1,5 +1,6 @@
 ---
 name: Margot Wyrwoll
+badge: Website & content
 photo: /assets/team/margot-wyrwoll.png
 linkedin: https://www.linkedin.com/in/margot-wyrwoll
 tags: team-member
