@@ -53,8 +53,7 @@ layout: base.njk
 
         <div class="card-grid card-grid--3">
           {% for card in what_we_do %}
-          <div class="card">
-            <div class="card__icon{% if loop.index0 % 2 == 1 %} card__icon--accent{% endif %}">{{ card.icon | svgicon | safe }}</div>
+          <div class="card card--cue{% if loop.index0 % 2 == 1 %} card--cue-accent{% endif %}">
             <h3>{{ card.title }}</h3>
             <p>{{ card.description }}</p>
           </div>
