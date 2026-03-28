@@ -7,9 +7,6 @@ permalink: /research/
 # ── Hero ──
 hero_title: Our Research
 hero_tagline: We support and champion research across fertility and reproductive health.
-hero_lead: >
-  We will update our priority areas as the evidence base evolves and as we
-  learn from patients, clinicians and researchers.
 
 # ── Focus Areas ──
 focus_areas_intro: >
