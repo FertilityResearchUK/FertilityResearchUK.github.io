@@ -1,3 +1,4 @@
+const path = require("path");
 const markdownIt = require("markdown-it");
 
 /* ── Inline SVG icon map (Lucide-style, 24×24, stroke-based) ── */
@@ -69,12 +70,48 @@ module.exports = function (eleventyConfig) {
   const md = markdownIt({ html: true, linkify: true, typographer: true });
   eleventyConfig.setLibrary("md", md);
 
-  // --- Collection: team members (sorted by order field) ---
+  /** Inline markdown only (e.g. **bold**) for short front-matter strings */
+  eleventyConfig.addFilter("mdInline", (content) => {
+    if (!content) return "";
+    return md.renderInline(String(content).trim());
+  });
+
+  /** Fragment id for /news/#… links (homepage cards → full item). Optional `anchor` in front matter overrides. */
+  eleventyConfig.addFilter("newsPostAnchorId", (post) => {
+    if (!post) return "";
+    if (post.data && post.data.anchor) {
+      return String(post.data.anchor).replace(/^#/, "");
+    }
+    const ip =
+      post.inputPath ||
+      (post.page && post.page.inputPath) ||
+      (post.template && post.template.inputPath);
+    if (ip) {
+      return "post-" + path.basename(ip, path.extname(ip));
+    }
+    const stem = post.page && post.page.filePathStem;
+    if (stem) {
+      return "post-" + path.basename(stem);
+    }
+    return "";
+  });
+
+  // --- Sort people by family name (strip parenthetical nicknames first) ---
+  function sortByLastName(a, b) {
+    const lastName = (item) => {
+      const name = (item.data && item.data.name) || "";
+      const cleaned = name.replace(/\s*\([^)]*\)\s*/g, " ").trim();
+      const parts = cleaned.split(/\s+/).filter((w) => w.length > 0);
+      return (parts[parts.length - 1] || "").toLowerCase();
+    };
+    return lastName(a).localeCompare(lastName(b), "en-GB");
+  }
+
   eleventyConfig.addCollection("trustees", (collectionApi) =>
-    collectionApi.getFilteredByTag("trustee").sort((a, b) => a.data.order - b.data.order)
+    collectionApi.getFilteredByTag("trustee").sort(sortByLastName)
   );
   eleventyConfig.addCollection("teamMembers", (collectionApi) =>
-    collectionApi.getFilteredByTag("team-member").sort((a, b) => a.data.order - b.data.order)
+    collectionApi.getFilteredByTag("team-member").sort(sortByLastName)
   );
 
   // --- Collection: news posts (newest first) ---
