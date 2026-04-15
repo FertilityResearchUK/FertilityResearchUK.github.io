@@ -4,7 +4,7 @@ summary: >
   We have published our initial areas of research interest, covering
   a broad range of topics across fertility and reproductive health.
 date: 2026-02-27
-image: /assets/stock-review/16-dna-hero.jpg
+image: /assets/images/img260331-1.webp
 tags: news
 ---
 

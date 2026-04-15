@@ -13,7 +13,7 @@ layout: base.njk
     <section class="section section--alt">
       <div class="container" style="max-width:800px;">
         {% for post in collections.news | reverse %}
-        <article class="news-item">
+        <article class="news-item" id="{{ post | newsPostAnchorId }}">
           {% if post.data.image %}
           <div class="news-item__image">
             <img src="{{ post.data.image }}" alt="" loading="lazy">

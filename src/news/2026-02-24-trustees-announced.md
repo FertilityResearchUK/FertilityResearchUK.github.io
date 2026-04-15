@@ -12,6 +12,12 @@ We are pleased to announce the founding Board of Trustees who will guide Fertili
 
 Our trustees bring together expertise in reproductive medicine, clinical research, genetics, governance and patient advocacy. Together, they are responsible for ensuring the charity operates in the public interest, maintains high standards of governance, and focuses its resources where they can make the greatest difference.
 
+Our founding trustees are:
+
+- Siladitya (Bhatty) Bhattacharya
+- Gwenda Burns
+- Kevin McEleny
+
 You can learn more about each trustee on our [Team page](/team/).
 
 We will share further details about our advisory structures and how we plan to involve the wider community in shaping our research priorities in the weeks ahead.

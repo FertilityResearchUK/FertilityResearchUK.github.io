@@ -5,7 +5,7 @@ layout: base.njk
     <section class="hero hero--home">
       <div class="container">
         <h1>{{ hero_title }}</h1>
-        <p class="tagline">{{ hero_tagline }}</p>
+        {% if hero_tagline %}<p class="tagline">{{ hero_tagline }}</p>{% endif %}
         <p class="lead">{{ hero_lead }}</p>
         <div class="hero-actions">
           <a href="/research/" class="btn btn-primary">Our research focus</a>
@@ -40,7 +40,7 @@ layout: base.njk
 
     <!-- decorative image -->
     <div class="image-inset mt-4 mb-3" aria-hidden="true">
-      <img src="/assets/stock-review/01-scientist-microscope-lab.jpg" alt="" loading="lazy">
+      <img src="/assets/images/img260403-10.webp" alt="" loading="lazy" width="1920" height="1080">
     </div>
 
     <!-- ======== WHAT WE DO ======== -->
@@ -74,7 +74,8 @@ layout: base.njk
         <div class="card-grid card-grid--3">
           {% for post in collections.news | reverse %}
           {% if loop.index <= 3 %}
-          <article class="news-card">
+          {% set newsHash = post | newsPostAnchorId %}
+          <a href="/news/#{{ newsHash }}" class="news-card">
             {% if post.data.image %}
             <div class="news-card__image">
               <img src="{{ post.data.image }}" alt="" loading="lazy">
@@ -83,7 +84,7 @@ layout: base.njk
             <time class="news-card__date" datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
             <h3>{{ post.data.headline }}</h3>
             <p>{{ post.data.summary }}</p>
-          </article>
+          </a>
           {% endif %}
           {% endfor %}
         </div>

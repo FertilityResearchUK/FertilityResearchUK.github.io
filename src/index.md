@@ -6,11 +6,12 @@ permalink: /
 
 # ── Hero ──
 hero_title: Fertility Research UK
-hero_tagline: Advancing fertility research. Improving care. Supporting people.
+hero_tagline: ""
 hero_lead: >
-  We are a UK charity funding research that improves how fertility challenges
-  are understood, diagnosed and treated. We work with researchers, clinicians,
-  patients and supporters to turn evidence into fairer care.
+  We are a new UK-based charity dedicated to funding and
+  championing fertility and reproductive health research. We work with
+  researchers, clinicians, patients and supporters to accelerate
+  discoveries—and turn evidence into better, fairer fertility care.
 
 # ── Our Purpose ──
 purpose_intro: >
