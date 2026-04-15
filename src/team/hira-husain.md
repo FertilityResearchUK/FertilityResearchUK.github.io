@@ -1,7 +1,8 @@
 ---
 name: Hira Husain
+photo: /assets/team/hira-husain.png
 badge: Social media
-linkedin: https://www.linkedin.com/in/hira-husain
+linkedin: https://www.linkedin.com/in/hira-husain-56b436203/
 tags: team-member
 order: 1
 bio: >
@@ -15,6 +16,7 @@ bio: >
   her Master's in Reproductive and Developmental Biology at Imperial College
   London in 2022. Outside of research, she enjoys running and playing the
   piano.
+quote_label: Why are you involved in FRUK?
 quote: >
   I am passionate about addressing the rising infertility rates in the UK and
   believe that better-funded research is critically needed to overcome current

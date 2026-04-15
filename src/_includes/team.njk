@@ -17,34 +17,31 @@ layout: base.njk
           <p>{{ trustees_intro }}</p>
         </div>
 
-        <div class="people-grid people-grid--profiles people-grid--trustees">
+        <div class="trustees-showcase">
           {% for person in collections.trustees %}
-          <article class="person-card person-card--portrait">
-            <div class="person-card__media">
-              {% if person.data.photo %}
-              <img src="{{ person.data.photo }}" alt="" loading="lazy" decoding="async">
-              {% else %}
-              <div class="person-card__placeholder" aria-hidden="true">{{ person.data.name | initials }}</div>
-              {% endif %}
-            </div>
-            <div class="person-card__body">
-              <div class="person-card__name-row">
-                <h3 class="person-card__name">{{ person.data.name }}</h3>
-                {% if person.data.linkedin %}<a href="{{ person.data.linkedin }}" class="linkedin-link" target="_blank" rel="noopener" aria-label="{{ person.data.name }} on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>{% endif %}
+          <article class="person-card person-card--trustee-row{% if loop.index0 % 2 == 1 %} person-card--trustee-row--media-end{% endif %}">
+            <div class="person-card__trustee-inner">
+              <div class="person-card__media person-card__media--trustee">
+                {% if person.data.photo %}
+                <img src="{{ person.data.photo }}" alt="" loading="lazy" decoding="async">
+                {% else %}
+                <div class="person-card__placeholder" aria-hidden="true">{{ person.data.name | initials }}</div>
+                {% endif %}
               </div>
-              {% if person.data.role %}<p class="person-card__role">{{ person.data.role }}</p>{% endif %}
-              {% if person.data.bio or person.data.quote %}
-              <details class="person-card__details">
-                <summary class="person-card__summary">
-                  <span>Read more</span>
-                  <span class="person-card__chev" aria-hidden="true"></span>
-                </summary>
-                <div class="person-card__expand">
-                  {% if person.data.bio %}<p class="person-card__bio">{{ person.data.bio }}</p>{% endif %}
-                  {% if person.data.quote %}<p class="person-card__quote">&ldquo;{{ person.data.quote }}&rdquo;</p>{% endif %}
+              <div class="person-card__body person-card__body--trustee">
+                <div class="person-card__name-row">
+                  <h3 class="person-card__name">{{ person.data.name }}</h3>
+                  {% if person.data.linkedin %}<a href="{{ person.data.linkedin }}" class="linkedin-link linkedin-link--modal" target="_blank" rel="noopener" aria-label="{{ person.data.name }} on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg><span>LinkedIn</span></a>{% endif %}
                 </div>
-              </details>
-              {% endif %}
+                {% if person.data.role %}<p class="person-card__role">{{ person.data.role }}</p>{% endif %}
+                {% if person.data.bio %}<p class="person-card__bio">{{ person.data.bio | mdInline | safe }}</p>{% endif %}
+                {% if person.data.quote %}
+                <p class="person-card__quote">
+                  {% if person.data.quote_label %}<span class="person-card__quote-label">{{ person.data.quote_label }}</span>{% endif %}
+                  <span class="person-card__quote-text">&ldquo;{{ person.data.quote }}&rdquo;</span>
+                </p>
+                {% endif %}
+              </div>
             </div>
           </article>
           {% endfor %}
@@ -62,7 +59,17 @@ layout: base.njk
 
         <div class="people-grid people-grid--profiles people-grid--who-we-are">
           {% for person in collections.teamMembers %}
-          <article class="person-card person-card--portrait">
+          <article class="person-card person-card--portrait{% if person.data.bio or person.data.quote %} person-card--open-modal{% endif %}"
+            {% if person.data.linkedin %}data-linkedin="{{ person.data.linkedin }}"{% endif %}
+            {% if person.data.bio or person.data.quote %}
+            data-team-modal-open
+            tabindex="0"
+            aria-haspopup="dialog"
+            aria-controls="team-member-modal"
+            aria-expanded="false"
+            aria-labelledby="who-we-are-name-{{ loop.index }}"
+            {% endif %}
+          >
             <div class="person-card__media">
               {% if person.data.photo %}
               <img src="{{ person.data.photo }}" alt="" loading="lazy" decoding="async">
@@ -72,27 +79,42 @@ layout: base.njk
             </div>
             <div class="person-card__body">
               <div class="person-card__name-row">
-                <h3 class="person-card__name">{{ person.data.name }}</h3>
-                {% if person.data.linkedin %}<a href="{{ person.data.linkedin }}" class="linkedin-link" target="_blank" rel="noopener" aria-label="{{ person.data.name }} on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>{% endif %}
+                <h3 class="person-card__name" id="who-we-are-name-{{ loop.index }}">{{ person.data.name }}</h3>
               </div>
               {% if person.data.badge %}<p class="person-card__badge">{{ person.data.badge }}</p>{% endif %}
               {% if person.data.bio or person.data.quote %}
-              <details class="person-card__details">
-                <summary class="person-card__summary">
-                  <span>Read more</span>
-                  <span class="person-card__chev" aria-hidden="true"></span>
-                </summary>
-                <div class="person-card__expand">
-                  {% if person.data.bio %}<p class="person-card__bio">{{ person.data.bio }}</p>{% endif %}
-                  {% if person.data.quote %}<p class="person-card__quote">&ldquo;{{ person.data.quote }}&rdquo;</p>{% endif %}
-                </div>
-              </details>
+              <div class="person-card__expand-source" hidden>
+                {% if person.data.bio %}<p class="person-card__bio">{{ person.data.bio }}</p>{% endif %}
+                {% if person.data.quote %}
+                <p class="person-card__quote">
+                  {% if person.data.quote_label %}<span class="person-card__quote-label">{{ person.data.quote_label }}</span>{% endif %}
+                  <span class="person-card__quote-text">&ldquo;{{ person.data.quote }}&rdquo;</span>
+                </p>
+                {% endif %}
+              </div>
               {% endif %}
             </div>
           </article>
           {% endfor %}
         </div>
       </div>
+
+      <dialog class="team-modal" id="team-member-modal" aria-labelledby="team-member-modal-title">
+        <div class="team-modal__dismiss-layer" data-team-modal-close tabindex="-1" aria-hidden="true"></div>
+        <div class="team-modal__panel" data-team-modal-panel>
+          <header class="team-modal__header">
+            <div class="team-modal__title-row">
+              <h3 class="team-modal__title" id="team-member-modal-title"></h3>
+              <a id="team-modal-linkedin" class="linkedin-link linkedin-link--modal team-modal__linkedin" href="#" hidden target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+            <button type="button" class="team-modal__close" aria-label="Close profile" data-team-modal-close>&times;</button>
+          </header>
+          <div class="team-modal__body"></div>
+        </div>
+      </dialog>
     </section>
 
     <!-- ======== SCIENTIFIC ADVISORY GROUP ======== -->

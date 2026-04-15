@@ -1,25 +1,20 @@
 ---
+
 title: Our Team
 description: Meet the trustees, leadership, advisors and volunteers behind Fertility Research UK.
 layout: team.njk
 permalink: /team/
 
 # ── Hero ──
+
 hero_title: Our Team
-hero_tagline: >
-  Dedicated trustees, advisors and volunteers bringing scientific, clinical,
-  lived-experience and operational expertise.
+hero_tagline: Trustees, advisors and volunteers with scientific, clinical and operational expertise.
 
 # ── Section intros ──
-trustees_intro: >
-  Our Trustees are legally responsible for the charity's governance—setting
-  strategic direction, ensuring we operate in the public benefit, and
-  overseeing finances, risk and compliance. Use Read more on each card for
-  background and a personal reflection.
 
-team_intro: >
-  Researchers, clinicians, advocates and colleagues—use Read more on each
-  card to see their full background and personal quote.
+trustees_intro: Trustees set our direction and oversee governance, finances and risk.
+
+team_intro: Researchers, clinicians, advocates and patients.
 
 advisors_intro: >
   We are building a network of experts to help ensure our research priorities
@@ -30,6 +25,7 @@ volunteers_intro: >
   events, communications, community engagement and lived-experience insight.
 
 # ── Advisory Group cards ──
+
 advisor_cards:
   - title: Research priorities
     description: Shaping calls for proposals and research direction.
@@ -39,6 +35,7 @@ advisor_cards:
     description: Guidance on dissemination and real-world application.
 
 # ── Volunteer cards ──
+
 volunteer_cards:
   - title: Events & fundraising
     description: Help organise and promote events and campaigns.
@@ -50,4 +47,6 @@ volunteer_cards:
     description: Administrative and organisational assistance.
   - title: Professional skills
     description: Design, legal, finance, HR and other pro-bono expertise.
+
 ---
+

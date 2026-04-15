@@ -1,19 +1,20 @@
 ---
 name: Kevin McEleny
 photo: /assets/team/kevin-mceleny.jpg
-linkedin: https://www.linkedin.com/in/kevin-mceleny
+linkedin: https://www.linkedin.com/in/kevin-mceleny-1b154484/
 tags: trustee
 order: 3
 bio: >
   After training in urology in the North East of England, Kevin was appointed
-  as a Consultant Urologist at the Newcastle-upon-Tyne Hospitals NHS Trust in
+  as a **Consultant Urologist** at the Newcastle-upon-Tyne Hospitals NHS Trust in
   2009. He specialises in the investigation and treatment of Male Fertility
   problems and has conducted research studies in this area. He has introduced
-  novel procedures for Male Fertility to Newcastle Fertility Centre, where he
-  is based, receiving patients from across the UK. He is the current Chair of
-  the British Fertility Society, having previously served as Chair of
+  novel procedures for Male Fertility to **Newcastle Fertility Centre**, where he
+  is based, receiving patients from across the UK. He is the current **Chair of
+  the British Fertility Society**, having previously served as Chair of
   Education and Training. He has had a number of other national roles including
-  on the NICE Fertility Guidelines Committee and the HFEA's SCAAC (committee).
+  on the **NICE Fertility Guidelines Committee** and the HFEA's SCAAC (committee).
+quote_label: Why are you involved in FRUK?
 quote: >
   One of the things that first attracted me to fertility was that despite such
   achievement and scientific discovery, it seemed so poorly understood and

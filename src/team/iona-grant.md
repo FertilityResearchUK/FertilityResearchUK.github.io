@@ -1,7 +1,7 @@
 ---
 name: Iona Grant
+photo: /assets/team/iona-grant.png
 badge: Fundraising partnerships
-linkedin: https://www.linkedin.com/in/iona-grant
 tags: team-member
 order: 2
 bio: >
