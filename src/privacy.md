@@ -8,7 +8,7 @@ permalink: /privacy/
 <section class="section">
   <div class="container" style="max-width:760px;">
     <h1>Privacy Policy</h1>
-    <p class="text-muted mb-3"><em>Last updated: February 2026</em></p>
+    <p class="text-muted mb-3"><em>Last updated: April 2026</em></p>
 
     <h2>Who we are</h2>
     <p>
@@ -24,6 +24,7 @@ permalink: /privacy/
       <li>The role you select when contacting us</li>
       <li>Any information you include in your message</li>
     </ul>
+    <p>Please only include personal or health information in your message if you are happy for us to receive it and respond to you about it.</p>
     <p>We do not currently use cookies for analytics or tracking. If this changes, we will update this policy and provide appropriate notice.</p>
 
     <h2>How we use your data</h2>
@@ -36,17 +37,24 @@ permalink: /privacy/
 
     <h2>Legal basis</h2>
     <p>
-      We process your personal data on the basis of your consent (when you
-      submit a form) and our legitimate interests in operating and promoting
-      the charity.
+      We process contact form submissions to reply to your enquiry. We usually do this
+      on the basis of our <strong>legitimate interests</strong> in running the charity
+      and responding to the public. If you ask us to send you updates or marketing,
+      we will only do so where we have a clear lawful basis (such as
+      <strong>consent</strong> or another basis that applies). You may withdraw consent
+      at any time where we rely on it.
     </p>
 
     <h2>Data sharing</h2>
     <p>
-      We do not sell or share your personal data with third parties for
-      marketing purposes. We may use third-party services (such as email or
-      form providers) to process data on our behalf — these are bound by
-      appropriate data-processing agreements.
+      We do not sell your personal data or share it with third parties for their
+      marketing. We use <strong>Formspree, Inc.</strong> (United States) to deliver
+      messages from our website contact form to our inbox. Formspree acts as a
+      <strong>data processor</strong> on our instructions. Information you submit may be
+      processed in the United States; we use Formspree’s service on the basis of
+      appropriate safeguards for international transfers (as set out in their terms
+      and UK/EEA data protection terms). You can read Formspree’s privacy information at
+      <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">formspree.io</a>.
     </p>
 
     <h2>Data retention</h2>
