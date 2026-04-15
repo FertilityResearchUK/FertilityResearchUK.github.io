@@ -5,17 +5,22 @@
         <div>
           <h4>Fertility Research UK</h4>
           <p>A UK-based charity dedicated to advancing fertility and reproductive health research, improving care, and strengthening the research community.</p>
-          <p class="mt-2" style="font-size:0.8rem; color:rgba(255,255,255,0.45);">Charity registration number: {{ site.charityNumber }}<br>{{ site.registeredAddress }}</p>
+          <address class="footer-address mt-2">
+            {% for line in site.addressLines %}
+            {{ line }}{% if not loop.last %}<br>{% endif %}
+            {% endfor %}
+          </address>
+          <p class="mt-2" style="font-size:0.8rem; color:rgba(255,255,255,0.45);">Charity registration number: {{ site.charityNumber }}</p>
         </div>
         <div>
           <h4>Pages</h4>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about/">About</a></li>
+            <li><a href="/team/">Our Team</a></li>
             <li><a href="/research/">Research</a></li>
             <li><a href="/news/">News</a></li>
             <li><a href="/fundraising/">Fundraising</a></li>
-            <li><a href="/team/">Our Team</a></li>
           </ul>
         </div>
         <div>
