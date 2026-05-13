@@ -1,6 +1,6 @@
 ---
 name: Anton Petrov
-badge: COO
+badge: Patient representative
 photo: /assets/team/anton-petrov.png
 linkedin: https://www.linkedin.com/in/aipetrov/
 tags: team-member
