@@ -62,6 +62,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("src/script.js");
+  eleventyConfig.addPassthroughCopy("src/favicon.svg");
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("src/favicon-96x96.png");
+  eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
+  eleventyConfig.addPassthroughCopy("src/web-app-manifest-192x192.png");
+  eleventyConfig.addPassthroughCopy("src/web-app-manifest-512x512.png");
+  eleventyConfig.addPassthroughCopy("src/site.webmanifest");
 
   // --- Ignore: files inside assets that 11ty might try to process ---
   eleventyConfig.ignores.add("src/assets/**/*.md");
