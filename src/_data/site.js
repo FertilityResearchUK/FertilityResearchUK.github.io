@@ -4,12 +4,12 @@ module.exports = {
   name: "Fertility Research UK",
   charityNumber: "[Pending registration]",
   registeredAddress:
-    "4th Floor, Silverstream House, 45 Fitzroy Street, Fitzrovia, London, W1T 6EB, GB",
+    "4th Floor, Silverstream House, 45 Fitzroy Street, Fitzrovia, London, W1T 6EB",
   addressLines: [
     "4th Floor, Silverstream House",
     "45 Fitzroy Street, Fitzrovia",
     "London",
-    "W1T 6EB GB",
+    "W1T 6EB",
   ],
   contactEmail: "info@fertilityresearchuk.org",
   ogImage: "/assets/og-default.jpg",

@@ -203,23 +203,10 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   gap: 0.625rem;
 }
-.logo-img {
+.logo-svg {
   display: block;
-  width: 48px;
   height: 48px;
-  object-fit: contain;
-  border-radius: 6px;
-}
-.logo-text {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: var(--tracking-tight);
-}
-.logo-text strong {
-  color: var(--accent);
-  font-weight: 700;
+  width: auto;
 }
 
 /* Desktop nav */
