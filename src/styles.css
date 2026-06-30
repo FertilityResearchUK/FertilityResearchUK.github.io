@@ -1329,6 +1329,26 @@ details[open] .person-card__chev::after {
   display: block;
 }
 
+/* Embedded third-party form (e.g. Google Forms) */
+.form-embed {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm, 0 8px 24px -18px rgba(41, 37, 36, 0.25));
+  overflow: hidden;
+}
+.form-embed iframe {
+  display: block;
+  width: 100%;
+  height: 1500px;
+  border: 0;
+}
+@media (max-width: 600px) {
+  .form-embed iframe {
+    height: 1750px;
+  }
+}
+
 /* ============================================================
    INFO BOX (NHS signposting etc.)
    ============================================================ */
@@ -1580,16 +1600,36 @@ details[open] .person-card__chev::after {
 
 /* --- A) Inset rounded image (homepage) --- */
 .image-inset {
+  position: relative;
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1.25rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
+/* Warm orange tint to soften the clinical feel of the image */
+.image-inset::after {
+  content: '';
+  position: absolute;
+  inset: 0 1.25rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    150deg,
+    rgba(249, 115, 22, 0.42),
+    rgba(234, 88, 12, 0.28)
+  );
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 1;
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 0.5s var(--ease-out-soft);
+}
 .image-inset img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: var(--radius-lg);
 }
 .news-card__image img,
 .news-item__image img {
@@ -1619,6 +1659,9 @@ details[open] .person-card__chev::after {
   .image-inset:hover img,
   .news-card:hover .news-card__image img,
   .news-item:hover .news-item__image img {
+    transform: scale(1.025);
+  }
+  .image-inset:hover::after {
     transform: scale(1.025);
   }
 }
