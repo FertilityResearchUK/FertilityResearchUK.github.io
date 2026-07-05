@@ -8,12 +8,12 @@ eleventyExcludeFromCollections: true
   <subtitle>News and updates from Fertility Research UK</subtitle>
   <link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="{{ site.url }}/" rel="alternate" type="text/html"/>
-  <updated>{% if collections.news.length %}{{ (collections.news | last).date | isoDate }}T00:00:00Z{% else %}2026-01-01T00:00:00Z{% endif %}</updated>
+  <updated>{% if collections.news.length %}{{ (collections.news | first).date | isoDate }}T00:00:00Z{% else %}2026-01-01T00:00:00Z{% endif %}</updated>
   <id>{{ site.url }}/</id>
   <author>
     <name>{{ site.name }}</name>
   </author>
-  {% for post in collections.news | reverse %}
+  {% for post in collections.news %}
   <entry>
     <title>{{ post.data.headline }}</title>
     <link href="{{ site.url }}/news/" rel="alternate" type="text/html"/>

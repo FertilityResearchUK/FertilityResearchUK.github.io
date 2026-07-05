@@ -73,7 +73,7 @@ layout: base.njk
         </div>
 
         <div class="card-grid card-grid--3">
-          {% for post in collections.news | reverse %}
+          {% for post in collections.news %}
           {% if loop.index <= 3 %}
           {% set newsHash = post | newsPostAnchorId %}
           <a href="/news/#{{ newsHash }}" class="news-card">
