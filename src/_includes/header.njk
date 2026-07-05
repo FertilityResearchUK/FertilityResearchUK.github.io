@@ -1,23 +1,38 @@
   <!-- ======== HEADER ======== -->
-  <header class="site-header" role="banner">
-    <div class="container">
-    <a href="/" class="logo-link" aria-label="Fertility Research UK — Home">
-      {% include "logo.svg" %}
-    </a>
-
-      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav id="main-nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="/"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
-          <li><a href="/about/"{% if page.url == "/about/" %} class="active"{% endif %}>About</a></li>
-          <li><a href="/team/"{% if page.url == "/team/" %} class="active"{% endif %}>Our Team</a></li>
-          <li><a href="/research/"{% if page.url == "/research/" %} class="active"{% endif %}>Research</a></li>
-          <li><a href="/news/"{% if page.url == "/news/" %} class="active"{% endif %}>News</a></li>
-          <li><a href="/fundraising/"{% if page.url == "/fundraising/" %} class="active"{% endif %}>Fundraising</a></li>
-        </ul>
-      </nav>
+  <div class="site-header-wrap">
+    {% if site.announcement.enabled %}
+    <div class="site-announcement" role="status">
+      <div class="container site-announcement__inner">
+        <p class="site-announcement__text">
+          {{ site.announcement.message }}
+          {% if site.announcement.link %}
+          <a href="{{ site.announcement.link }}" class="site-announcement__link">{{ site.announcement.linkText }}</a>
+          {% endif %}
+        </p>
+      </div>
     </div>
-  </header>
+    {% endif %}
+
+    <header class="site-header" role="banner">
+      <div class="container">
+      <a href="/" class="logo-link" aria-label="Fertility Research UK — Home">
+        {% include "logo.svg" %}
+      </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav id="main-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="/"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
+            <li><a href="/about/"{% if page.url == "/about/" %} class="active"{% endif %}>About</a></li>
+            <li><a href="/team/"{% if page.url == "/team/" %} class="active"{% endif %}>Our Team</a></li>
+            <li><a href="/research/"{% if page.url == "/research/" %} class="active"{% endif %}>Research</a></li>
+            <li><a href="/news/"{% if page.url == "/news/" %} class="active"{% endif %}>News</a></li>
+            <li><a href="/fundraising/"{% if page.url == "/fundraising/" %} class="active"{% endif %}>Fundraising</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </div>
