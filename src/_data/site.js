@@ -19,11 +19,4 @@ module.exports = {
     facebook: "https://www.facebook.com/FertilityResearchUK",
     instagram: "https://www.instagram.com/fertilityresearchuk",
   },
-  announcement: {
-    enabled: true,
-    message:
-      "We're at ESHRE 2026, 5–8 July — come find us at stand A37 in the start-up area.",
-    link: "/news/#post-2026-07-05-eshre-2026",
-    linkText: "Learn more",
-  },
 };
