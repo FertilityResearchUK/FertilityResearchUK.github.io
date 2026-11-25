@@ -1,6 +1,6 @@
 ---
 name: Margot Wyrwoll
-badge: Marketing & clinical lead
+badge: Marketing & clinical adviser
 photo: /assets/team/margot-wyrwoll.png
 linkedin: https://www.linkedin.com/in/margot-wyrwoll-3a7636164/?locale=en
 tags: team-member
