@@ -1,7 +1,7 @@
 ---
 name: Hira Husain
 photo: /assets/team/hira-husain.png
-badge: Social media
+badge: Marketing
 linkedin: https://www.linkedin.com/in/hira-husain-56b436203/
 tags: team-member
 order: 1

@@ -1,7 +1,7 @@
 ---
 name: Janice Linne
 photo: /assets/team/janice-linne.png
-badge: Fundraising partnerships
+badge: Fundraising
 linkedin: https://www.linkedin.com/in/janice-linne-0a0aba1a9/
 tags: team-member
 order: 3

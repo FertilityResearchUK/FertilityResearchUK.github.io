@@ -1,6 +1,6 @@
 ---
 name: Catriona Hepburn
-badge: Legal & compliance
+badge: Legal & governance
 photo: /assets/team/catriona-hepburn.jpeg
 linkedin: https://www.linkedin.com/in/catrionahepburn/
 tags: team-member

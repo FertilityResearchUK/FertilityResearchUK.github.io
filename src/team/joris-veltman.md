@@ -1,6 +1,6 @@
 ---
 name: Joris Veltman
-badge: Founder & CEO
+badge: CEO
 photo: /assets/team/joris-veltman.jpg
 linkedin: https://www.linkedin.com/in/joris-veltman-3a722622/
 tags: team-member
